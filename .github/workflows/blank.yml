@@ -8,9 +8,6 @@ on:
   push:
     branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -23,11 +20,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Install NodeJs
-        uses: actions/setup-node@v2-beta\
+        uses: actions/setup-node@v2-beta
         with:
           node-version: 12
     
-      - uses: borales/actions=yarn@v2.0.0
+      - uses: Borales/actions-yarn@v2.3.0
         with:
           cmd: install
       
@@ -38,4 +35,4 @@ jobs:
         run: npm install --global surge
         
       - name: Deploy to Surge
-        run: surge ./build weather_app_react.surge.sh ${{secrets.SURGE_TOKEN}}
+        run: surge ./build https://weather_app_react.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
