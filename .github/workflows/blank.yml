@@ -22,9 +22,9 @@ jobs:
       - name: Install NodeJs
         uses: actions/setup-node@v2-beta
         with:
-          node-version: 14
+          node-version: 12
     
-      - uses: Borales/actions-yarn@v2.3.0
+      - uses: Borales/actions-yarn@v2.0.0
         with:
           cmd: install
       
