@@ -1,7 +1,7 @@
 {
   "name": "weather-react",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://imuneeb.com/weather/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
